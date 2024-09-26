@@ -3,9 +3,10 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import {TailwindProvider} from "react-native-tailwindcss"
 import HomeScreen from '../screens/HomeScreen'
+import MainScreen from '../screens/MainScreen'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import { Provider } from 'react-redux'
-import store from './store'
+import store from './store';
 import { Stack } from 'expo-router'
 import {
 
@@ -20,6 +21,7 @@ export default function index() {
       <Provider store={store}>
       <TailwindProvider>
         <Stack.Navigator>
+        <Stack.Screen name = "main" component={MainScreen}/>
           <Stack.Screen name = "Home" component={HomeScreen}/>
           <Stack.Screen name = "Home" component={HomeScreen}/>
         </Stack.Navigator>
